@@ -5,11 +5,21 @@ export default function RouteDPage() {
   return (
     <ChallengeCard
       routeCode="D"
-      challengeTitle="Cryptographic Encoding Layer"
-      category="Decryption & Encoding"
+      challengeTitle="Decode the Message"
+      category="Encoding"
       difficulty="Medium"
-      description="An encoded block string has been transmitted via local frequency beacon. Decode the Base64 nested cipher to reveal the flag text."
-      hint="Multiple encoding passes were applied recursively."
+      description={`An attacker intercepted this message:
+
+RkxBR3tERUNPREV9SEVSRX0xMjN9
+
+The analyst says:
+
+"It's not encrypted. It's just wearing a different representation."
+
+Decode the message.
+
+Flag format: CYBER{________}`}
+      hint="This is Base64. Decode the message to reveal the flag."
       nextNode="TRC-D"
     />
   );

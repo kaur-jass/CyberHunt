@@ -3,48 +3,30 @@ import ChallengeCard from '../components/ChallengeCard';
 
 export default function RouteCPage() {
   return (
-    <div className="min-h-screen bg-[#F7F8FA]">
+    <ChallengeCard
+      routeCode="C"
+      challengeTitle="The Attacker Who Never Existed"
+      category="Digital Identity"
+      difficulty="Medium"
+      description={`A student's account at NIT Jalandhar is breached at 3:17 AM.
 
-      <header className="border-b border-slate-200 bg-white">
+The logs show a successful login.
+The database shows records being accessed.
+The firewall shows an outgoing connection.
 
-        <div className="max-w-6xl mx-auto px-5 py-4 flex justify-between items-center">
+But when investigators try to identify the attacker, there is no real user, no physical machine, and no traceable identity.
 
-          <div>
+The attacker was there.
+The evidence proves it.
+But the attacker seems to have never existed.
 
-            <div className="font-semibold text-slate-900">
-              CYBER HUNT 2026
-            </div>
+What single word best describes such an attacker?
 
-            <div className="text-[10px] font-mono text-rose-700 mt-1">
-              BREACH / NODE BRH-C
-            </div>
+Submit the word as the flag.
 
-          </div>
-
-          <div className="flex items-center gap-2 text-[10px] font-mono text-slate-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
-            LEVEL 02
-          </div>
-
-        </div>
-
-      </header>
-
-      <main className="min-h-[calc(100vh-73px)] flex items-center justify-center px-5 py-10">
-
-        <ChallengeCard
-          routeCode="C"
-          nodeId="BRH-C"
-          challengeTitle="Header Manipulation"
-          category="HTTP Security"
-          difficulty="Medium"
-          description="A server response changes when specific request metadata is modified. Determine which piece of information influences the application's security decision."
-          hint="HTTP headers can carry more than content preferences. Some applications make security decisions based on them."
-          nextNode="PHM-C"
-        />
-
-      </main>
-
-    </div>
+Flag: CYBER{________}`}
+      hint="Think of something that appears to exist but cannot be physically identified."
+      nextNode="BRH-C"
+    />
   );
 }

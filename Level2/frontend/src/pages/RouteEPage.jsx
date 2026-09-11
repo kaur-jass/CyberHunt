@@ -3,48 +3,30 @@ import ChallengeCard from '../components/ChallengeCard';
 
 export default function RouteEPage() {
   return (
-    <div className="min-h-screen bg-[#F7F8FA]">
+    <ChallengeCard
+      routeCode="E"
+      challengeTitle="More Clever — Binary"
+      category="Binary / ASCII Decoding"
+      difficulty="Medium"
+      description={`NIT Jalandhar — Breach Analysis
 
-      <header className="border-b border-slate-200 bg-white">
+The attacker left this binary sequence in the compromised server:
 
-        <div className="max-w-6xl mx-auto px-5 py-4 flex justify-between items-center">
+01010000 01001000 01000001
+01001110 01010100 01001111
+01001101
 
-          <div>
+The SOC analyst says:
 
-            <div className="font-semibold text-slate-900">
-              CYBER HUNT 2026
-            </div>
+"The data is not encrypted. Interpret each 8-bit group as an ASCII character."
 
-            <div className="text-[10px] font-mono text-rose-700 mt-1">
-              BREACH / NODE BRH-E
-            </div>
+Decode it.
 
-          </div>
+Flag: CYBER{________}
 
-          <div className="flex items-center gap-2 text-[10px] font-mono text-slate-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
-            LEVEL 02
-          </div>
-
-        </div>
-
-      </header>
-
-      <main className="min-h-[calc(100vh-73px)] flex items-center justify-center px-5 py-10">
-
-        <ChallengeCard
-          routeCode="E"
-          nodeId="BRH-E"
-          challengeTitle="Injection Point"
-          category="Application Security"
-          difficulty="Hard"
-          description="A controlled application processes user-supplied input in an unexpected way. Study the application's behavior and identify the vulnerable input path."
-          hint="Whenever external input reaches an interpreter, ask exactly how that input is being handled."
-          nextNode="PHM-E"
-        />
-
-      </main>
-
-    </div>
+ASCII decoding gives: PHANTOM`}
+      hint="Interpret every 8-bit binary group as one ASCII character."
+      nextNode="BRH-E"
+    />
   );
 }

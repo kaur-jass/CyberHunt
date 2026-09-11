@@ -5,11 +5,25 @@ export default function RouteEPage() {
   return (
     <ChallengeCard
       routeCode="E"
-      challengeTitle="Metadata Log Examination"
-      category="Metadata Forensics"
+      challengeTitle="Metadata Investigation"
+      category="Digital Forensics"
       difficulty="Easy"
-      description="Analyze the EXIF and file attribute logs of the physical asset tag image. The author field holds an encoded sequence required for path continuation."
-      hint="Inspect raw file properties using standard command line utility."
+      description={`Give them an image containing a normal-looking picture.
+
+The QR says:
+
+"The picture tells you what you see.
+The metadata tells you what happened.
+Find the hidden clue."
+
+Investigate the image's metadata.
+
+Flag format: CYBER{________}
+
+Set the image's metadata so that, for example:
+
+Comment: FLAG{METADATA_NEVER_LIES}`}
+      hint="Inspect the image's metadata, especially the Comment field."
       nextNode="TRC-E"
     />
   );

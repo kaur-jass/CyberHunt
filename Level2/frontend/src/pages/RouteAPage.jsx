@@ -3,46 +3,29 @@ import ChallengeCard from '../components/ChallengeCard';
 
 export default function RouteAPage() {
   return (
-    <div className="min-h-screen bg-[#F7F8FA]">
+    <ChallengeCard
+      routeCode="A"
+      challengeTitle="Hidden in the Breach Report — SHADOW"
+      category="Incident Investigation"
+      difficulty="Easy"
+      description={`NIT Jalandhar SOC — Data Breach Investigation
 
-      <header className="border-b border-slate-200 bg-white">
+An unauthorized user accessed the student portal at 02:13 AM.
 
-        <div className="max-w-6xl mx-auto px-5 py-4 flex justify-between items-center">
+The attacker Started with a stolen account.
+They Harvested information from the database.
+The SOC found Anomalous login activity.
+The attacker Downloaded several files.
+Investigators Observed communication with an unknown server.
+The account was Wiped from the affected machine.
 
-          <div>
-            <div className="font-semibold text-slate-900">
-              CYBER HUNT 2026
-            </div>
+The flag is hidden in the first letters of the bold words.
 
-            <div className="text-[10px] font-mono text-rose-700 mt-1">
-              BREACH / NODE BRH-A
-            </div>
-          </div>
+Flag: CYBER{________}
 
-          <div className="flex items-center gap-2 text-[10px] font-mono text-slate-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
-            LEVEL 02
-          </div>
-
-        </div>
-
-      </header>
-
-      <main className="min-h-[calc(100vh-73px)] flex items-center justify-center px-5 py-10">
-
-        <ChallengeCard
-          routeCode="A"
-          nodeId="BRH-A"
-          challengeTitle="Broken Access"
-          category="Web Security"
-          difficulty="Medium"
-          description="A protected application endpoint is behaving differently depending on how the request is constructed. Analyze the access mechanism and identify the weakness."
-          hint="Authentication and authorization are not the same thing. Determine what the application actually verifies."
-          nextNode="PHM-A"
-        />
-
-      </main>
-
-    </div>
+Extract the hidden word.`}
+      hint="Take the first letter of each bold word: Started, Harvested, Anomalous, Downloaded, Observed, Wiped."
+      nextNode="BRH-A"
+    />
   );
 }

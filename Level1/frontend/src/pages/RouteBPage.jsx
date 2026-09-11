@@ -3,42 +3,30 @@ import ChallengeCard from '../components/ChallengeCard';
 
 export default function RouteBPage() {
   return (
-    <div className="min-h-screen bg-[#F7F8FA]">
+    <ChallengeCard
+      routeCode="B"
+      challengeTitle="First-Letter Extraction"
+      category="Digital Forensics"
+      difficulty="Easy"
+      description={`NIT Jalandhar SOC Report
 
-      <header className="border-b border-slate-200 bg-white">
-        <div className="max-w-6xl mx-auto px-5 py-4 flex justify-between items-center">
+A suspicious Process was detected on the student portal.
+The attacker used Harvested credentials to log in.
+The SOC found an Internal database connection.
+Thousands of records were Selected and copied.
+The attacker then Handed the data to an external server.
+The compromised account was finally Isolated.
+The incident was Notified to the security team.
+Investigators Gathered the logs.
 
-          <div>
-            <div className="font-semibold text-slate-900">
-              CYBER HUNT 2026
-            </div>
+Find the hidden word and submit it as the flag.
 
-            <div className="text-[10px] font-mono text-teal-700 mt-1">
-              TRACE / NODE TRC-B
-            </div>
-          </div>
+Take the first letters:
+P H I S H I N G
 
-          <div className="text-[10px] font-mono text-slate-400">
-            LEVEL 01
-          </div>
-
-        </div>
-      </header>
-
-      <main className="min-h-[calc(100vh-73px)] flex items-center justify-center px-5 py-10">
-
-        <ChallengeCard
-          routeCode="B"
-          challengeTitle="Residual Evidence"
-          category="Metadata Analysis"
-          difficulty="Easy"
-          description="A file recovered from a compromised workstation appears harmless at first glance. Inspect its available information and determine what it reveals."
-          hint="Files can reveal more about their origin than their contents suggest."
-          nextNode="TRC-B"
-        />
-
-      </main>
-
-    </div>
+Flag format: CYBER{________}`}
+      hint="Look at the first letter of each important sentence."
+      nextNode="TRC-B"
+    />
   );
 }

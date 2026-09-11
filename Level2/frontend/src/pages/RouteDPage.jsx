@@ -3,48 +3,30 @@ import ChallengeCard from '../components/ChallengeCard';
 
 export default function RouteDPage() {
   return (
-    <div className="min-h-screen bg-[#F7F8FA]">
+    <ChallengeCard
+      routeCode="D"
+      challengeTitle="My Favorite — Breach Evidence"
+      category="Digital Forensics"
+      difficulty="Medium"
+      description={`NIT Jalandhar SOC — Evidence Room
 
-      <header className="border-b border-slate-200 bg-white">
+Investigators recovered seven pieces of evidence from a compromised system:
 
-        <div className="max-w-6xl mx-auto px-5 py-4 flex justify-between items-center">
+File 1:  p@$$word.txt
+File 2:  host.log
+File 3:  admin_backup.zip
+File 4:  network.pcap
+File 5:  token.dat
+File 6:  output.enc
+File 7:  malware.exe
 
-          <div>
+The analyst notices that each filename begins with a letter that matters.
 
-            <div className="font-semibold text-slate-900">
-              CYBER HUNT 2026
-            </div>
+Extract the first letter from each filename, in order.
 
-            <div className="text-[10px] font-mono text-rose-700 mt-1">
-              BREACH / NODE BRH-D
-            </div>
-
-          </div>
-
-          <div className="flex items-center gap-2 text-[10px] font-mono text-slate-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
-            LEVEL 02
-          </div>
-
-        </div>
-
-      </header>
-
-      <main className="min-h-[calc(100vh-73px)] flex items-center justify-center px-5 py-10">
-
-        <ChallengeCard
-          routeCode="D"
-          nodeId="BRH-D"
-          challengeTitle="The Weak Credential"
-          category="Authentication"
-          difficulty="Hard"
-          description="An isolated training system contains an authentication weakness. Analyze the provided information and determine the credential-related flaw."
-          hint="Strong passwords cannot compensate for a fundamentally weak authentication design."
-          nextNode="PHM-D"
-        />
-
-      </main>
-
-    </div>
+Flag: CYBER{________}`}
+      hint="Take the first character of each filename."
+      nextNode="BRH-D"
+    />
   );
 }
