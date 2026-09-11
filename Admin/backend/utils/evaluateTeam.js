@@ -6,7 +6,7 @@ const Level4 = require('../models/level4');
 const Level5 = require('../models/level5');
 
 const LevelConfig =
-  require('../models/LevelConfig');
+  require('../models/levelConfig');
 
 const Leaderboard =
   require('../models/leaderboard');
