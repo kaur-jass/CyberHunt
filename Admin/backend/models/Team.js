@@ -12,7 +12,7 @@ const memberSchema = new mongoose.Schema({
 
 const teamSchema = new mongoose.Schema({
   teamId: { type: String, required: true, unique: true }, // e.g., TEAM-001
-  teamName: { type: String, required: true, unique: true },
+  teamName: { type: String, required: true },
   teamSize: { type: Number, required: true },
   members: [memberSchema],
   createdAt: { type: Date, default: Date.now }

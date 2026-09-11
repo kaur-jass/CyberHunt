@@ -1,323 +1,298 @@
 import React from 'react';
-import {
-  Network,
-  ShieldCheck,
-  Flag,
-  Trophy,
-  Activity,
-  Target,
-  LockKeyhole,
-  CheckCircle2
-} from 'lucide-react';
+import ChallengeCard from '../components/ChallengeCard';
 
 export default function NexusHome() {
   return (
-    <div className="min-h-screen bg-[#F7F8FA] text-slate-900">
+    <main className="min-h-screen bg-[#F7F8FA] flex items-center justify-center px-5 py-10">
 
-      {/* Header */}
-      <header className="border-b border-slate-200 bg-white">
+      <div className="w-full max-w-2xl">
 
-        <div className="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+        {/* Final Destination Banner */}
+        <div className="mb-4 bg-white border border-cyan-200 rounded-lg px-4 py-3">
 
           <div className="flex items-center gap-3">
 
-            <div className="w-9 h-9 rounded-lg bg-cyan-50 border border-cyan-200 flex items-center justify-center">
-              <Network className="w-5 h-5 text-cyan-700" />
+            <div className="w-8 h-8 rounded-md bg-cyan-50 border border-cyan-200 flex items-center justify-center">
+              <span className="text-cyan-700 font-mono text-xs font-bold">
+                N
+              </span>
             </div>
 
             <div>
-
-              <div className="font-semibold tracking-tight">
-                CYBER HUNT 2026
+              <div className="text-xs font-mono font-semibold text-cyan-700">
+                FINAL DESTINATION REACHED
               </div>
 
-              <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">
-                NEXUS / FINAL LEVEL
+              <div className="text-[10px] text-slate-400 mt-0.5">
+                All routes converge at this node
               </div>
-
             </div>
-
-          </div>
-
-          <div className="flex items-center gap-2 text-[10px] font-mono text-slate-500">
-
-            <span className="w-2 h-2 rounded-full bg-cyan-500" />
-
-            FINAL NODE ONLINE
 
           </div>
 
         </div>
 
-      </header>
 
-      {/* Main */}
-      <main className="max-w-5xl mx-auto px-5 py-12">
+        {/* Final Challenge */}
+        <ChallengeCard
+          routeCode="FINAL"
+          nodeId="NEX-01"
+          level="5"
+          levelName="NEXUS"
+          challengeTitle="Break the Chain"
+          category="Cyber Investigation"
+          difficulty="Expert"
+          description={
+            <div className="space-y-5">
 
-        {/* Hero */}
-        <section className="max-w-3xl">
-
-          <div className="flex items-center gap-2 text-cyan-700 font-mono text-xs font-semibold mb-4">
-
-            <Target className="w-4 h-4" />
-
-            FINAL DESTINATION
-
-          </div>
-
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
-            NEXUS
-          </h1>
-
-          <p className="mt-3 text-lg text-slate-500">
-            Every path ends here.
-          </p>
-
-          <p className="mt-5 text-sm text-slate-600 leading-7 max-w-2xl">
-            You have followed the trail through multiple layers of the hunt.
-            The routes have converged at the Nexus. One final challenge remains
-            between your team and completion.
-          </p>
-
-        </section>
-
-        {/* Status Cards */}
-        <section className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-
-          <div className="bg-white border border-slate-200 rounded-lg p-4">
-
-            <div className="flex items-center gap-2 text-slate-400 text-[10px] font-mono uppercase">
-
-              <Activity className="w-3.5 h-3.5" />
-
-              Level
-
-            </div>
-
-            <div className="mt-2 text-lg font-semibold">
-              05 / NEXUS
-            </div>
-
-          </div>
-
-          <div className="bg-white border border-slate-200 rounded-lg p-4">
-
-            <div className="flex items-center gap-2 text-slate-400 text-[10px] font-mono uppercase">
-
-              <Network className="w-3.5 h-3.5" />
-
-              Convergence
-
-            </div>
-
-            <div className="mt-2 text-lg font-semibold">
-              05 → 01
-            </div>
-
-          </div>
-
-          <div className="bg-white border border-cyan-200 rounded-lg p-4 bg-cyan-50/40">
-
-            <div className="flex items-center gap-2 text-cyan-700 text-[10px] font-mono uppercase">
-
-              <Flag className="w-3.5 h-3.5" />
-
-              Final Status
-
-            </div>
-
-            <div className="mt-2 text-lg font-semibold text-cyan-700">
-              UNRESOLVED
-            </div>
-
-          </div>
-
-        </section>
-
-        {/* Convergence Diagram */}
-        <section className="mt-8 bg-white border border-slate-200 rounded-xl overflow-hidden">
-
-          <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between">
-
-            <div>
-
-              <h2 className="font-semibold">
-                Route Convergence
-              </h2>
-
-              <p className="text-xs text-slate-400 mt-1">
-                All discovered paths terminate at the same final node.
+              <p>
+                The investigation is almost complete. The attacker did not
+                leave the final answer in a single location.
               </p>
 
-            </div>
+              <p>
+                Evidence recovered from the previous five levels has been
+                correlated into the following incident timeline.
+              </p>
 
-            <span className="text-[10px] font-mono text-cyan-700 bg-cyan-50 border border-cyan-200 px-2 py-1 rounded">
-              NEX-01
 
-            </span>
+              {/* Incident Timeline */}
+              <div className="rounded-xl border border-slate-200 bg-slate-950 p-4 overflow-x-auto">
 
-          </div>
-
-          <div className="p-6">
-
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
-
-              {['A', 'B', 'C', 'D', 'E'].map((route) => (
-
-                <div
-                  key={route}
-                  className="border border-slate-200 rounded-lg p-3 bg-slate-50 text-center"
-                >
-
-                  <div className="text-[10px] font-mono text-slate-400">
-                    ROUTE
-                  </div>
-
-                  <div className="mt-1 font-semibold text-slate-700">
-                    {route}
-                  </div>
-
-                  <div className="mt-2 text-[10px] font-mono text-cyan-700">
-                    ↓
-                  </div>
-
-                  <div className="text-[10px] font-mono text-cyan-700">
-                    NEX-01
-                  </div>
-
+                <div className="text-[10px] font-mono text-slate-500 mb-3">
+                  INCIDENT TIMELINE
                 </div>
 
-              ))}
+                <div className="text-[11px] font-mono leading-6 text-slate-300 whitespace-pre">
+{`09:14:07  [IGNITION]   INITIAL ACCESS
+09:16:42  [TRACE]      TRACE IDENTIFIED
+09:21:31  [BREACH]     CREDENTIAL COMPROMISE
+09:27:42  [PHANTOM]    PERSISTENCE
+09:31:58  [ZERO DAY]   EVIDENCE DESTRUCTION`}
+                </div>
 
-            </div>
-
-          </div>
-
-        </section>
-
-        {/* Final Mission */}
-        <section className="mt-8 bg-white border border-slate-200 rounded-xl overflow-hidden">
-
-          <div className="px-6 py-4 border-b border-slate-200">
-
-            <div className="flex items-center gap-2">
-
-              <ShieldCheck className="w-4 h-4 text-cyan-700" />
-
-              <h2 className="font-semibold">
-                Final Protocol
-              </h2>
-
-            </div>
-
-            <p className="text-xs text-slate-400 mt-1">
-              The final verification sequence.
-            </p>
-
-          </div>
-
-          <div className="p-6 space-y-5">
-
-            <div className="flex gap-4">
-
-              <div className="w-7 h-7 shrink-0 rounded-md bg-slate-50 border border-slate-200 flex items-center justify-center text-[10px] font-mono text-cyan-700">
-                01
               </div>
 
-              <div>
 
-                <div className="text-sm font-medium">
-                  Identify the final vulnerability
+              {/* Event Records */}
+              <div className="space-y-3">
+
+                <div className="rounded-xl border border-slate-200 bg-white p-4">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-[10px] font-mono font-semibold text-cyan-700">
+                      EVENT 01
+                    </span>
+                    <span className="text-[10px] font-mono text-slate-400">
+                      IGNITION
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3 text-xs font-mono">
+                    <div>
+                      <span className="text-slate-400">TIME</span>
+                      <div className="text-slate-700 mt-1">09:14:07</div>
+                    </div>
+
+                    <div>
+                      <span className="text-slate-400">EVENT ID</span>
+                      <div className="text-slate-700 mt-1">17</div>
+                    </div>
+
+                    <div className="col-span-2">
+                      <span className="text-slate-400">DATA</span>
+                      <div className="text-slate-700 mt-1 break-all">
+                        7F4C594245525F494E4954
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <p className="text-xs text-slate-500 mt-1 leading-5">
-                  Analyze the final challenge presented by the Nexus.
+
+                <div className="rounded-xl border border-slate-200 bg-white p-4">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-[10px] font-mono font-semibold text-cyan-700">
+                      EVENT 02
+                    </span>
+                    <span className="text-[10px] font-mono text-slate-400">
+                      TRACE
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3 text-xs font-mono">
+                    <div>
+                      <span className="text-slate-400">TIME</span>
+                      <div className="text-slate-700 mt-1">09:16:42</div>
+                    </div>
+
+                    <div>
+                      <span className="text-slate-400">EVENT ID</span>
+                      <div className="text-slate-700 mt-1">04</div>
+                    </div>
+
+                    <div className="col-span-2">
+                      <span className="text-slate-400">DATA</span>
+                      <div className="text-slate-700 mt-1 break-all">
+                        5A5942524F54415F4C4F47
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div className="rounded-xl border border-slate-200 bg-white p-4">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-[10px] font-mono font-semibold text-cyan-700">
+                      EVENT 03
+                    </span>
+                    <span className="text-[10px] font-mono text-slate-400">
+                      BREACH
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3 text-xs font-mono">
+                    <div>
+                      <span className="text-slate-400">TIME</span>
+                      <div className="text-slate-700 mt-1">09:21:31</div>
+                    </div>
+
+                    <div>
+                      <span className="text-slate-400">EVENT ID</span>
+                      <div className="text-slate-700 mt-1">03</div>
+                    </div>
+
+                    <div className="col-span-2">
+                      <span className="text-slate-400">DATA</span>
+                      <div className="text-slate-700 mt-1 break-all">
+                        4E59455855535F4241434B
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div className="rounded-xl border border-slate-200 bg-white p-4">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-[10px] font-mono font-semibold text-cyan-700">
+                      EVENT 04
+                    </span>
+                    <span className="text-[10px] font-mono text-slate-400">
+                      PHANTOM
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3 text-xs font-mono">
+                    <div>
+                      <span className="text-slate-400">TIME</span>
+                      <div className="text-slate-700 mt-1">09:27:42</div>
+                    </div>
+
+                    <div>
+                      <span className="text-slate-400">EVENT ID</span>
+                      <div className="text-slate-700 mt-1">05</div>
+                    </div>
+
+                    <div className="col-span-2">
+                      <span className="text-slate-400">DATA</span>
+                      <div className="text-slate-700 mt-1 break-all">
+                        50524553495354454E4345
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div className="rounded-xl border border-slate-200 bg-white p-4">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-[10px] font-mono font-semibold text-cyan-700">
+                      EVENT 05
+                    </span>
+                    <span className="text-[10px] font-mono text-slate-400">
+                      ZERO DAY
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3 text-xs font-mono">
+                    <div>
+                      <span className="text-slate-400">TIME</span>
+                      <div className="text-slate-700 mt-1">09:31:58</div>
+                    </div>
+
+                    <div>
+                      <span className="text-slate-400">EVENT ID</span>
+                      <div className="text-slate-700 mt-1">06</div>
+                    </div>
+
+                    <div className="col-span-2">
+                      <span className="text-slate-400">DATA</span>
+                      <div className="text-slate-700 mt-1 break-all">
+                        42524F4B454E5F434841494E
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+              {/* Correlation Rules */}
+              <div className="rounded-xl border border-cyan-100 bg-cyan-50 px-4 py-4">
+
+                <div className="text-[10px] font-mono font-semibold text-cyan-700 uppercase tracking-wider mb-3">
+                  NEXUS PROTOCOL
+                </div>
+
+                <div className="text-sm text-slate-700 space-y-2">
+                  <p>1. Sort the events chronologically.</p>
+
+                  <p>
+                    2. For every event, use its Event ID as the character
+                    position inside its DATA string.
+                  </p>
+
+                  <p>
+                    3. Convert the selected hexadecimal pair into ASCII.
+                  </p>
+
+                  <p>
+                    4. Concatenate the recovered characters in chronological
+                    order.
+                  </p>
+
+                  <p>
+                    5. The resulting phrase identifies what was broken in the
+                    attack chain.
+                  </p>
+
+                  <p>
+                    6. Submit that phrase as the flag keyword.
+                  </p>
+                </div>
+
+              </div>
+
+
+              {/* Important Note */}
+              <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+
+                <div className="text-[10px] font-mono text-slate-500 mb-1">
+                  FINAL NOTE
+                </div>
+
+                <p className="text-xs text-slate-600 leading-5">
+                  Do not treat the five levels as independent incidents.
+                  Their evidence forms one continuous attack chain.
                 </p>
 
               </div>
 
             </div>
+          }
+          hint="Follow the timeline, use each Event ID for extraction, decode the selected hexadecimal byte, and read the final phrase."
+          nextNode="COMPLETE"
+        />
 
-            <div className="flex gap-4">
+      </div>
 
-              <div className="w-7 h-7 shrink-0 rounded-md bg-slate-50 border border-slate-200 flex items-center justify-center text-[10px] font-mono text-cyan-700">
-                02
-              </div>
-
-              <div>
-
-                <div className="text-sm font-medium">
-                  Recover the final flag
-                </div>
-
-                <p className="text-xs text-slate-500 mt-1 leading-5">
-                  Submit the correct flag using your registered Team ID.
-                </p>
-
-              </div>
-
-            </div>
-
-            <div className="flex gap-4">
-
-              <div className="w-7 h-7 shrink-0 rounded-md bg-slate-50 border border-slate-200 flex items-center justify-center text-[10px] font-mono text-cyan-700">
-                03
-              </div>
-
-              <div>
-
-                <div className="text-sm font-medium">
-                  Complete the hunt
-                </div>
-
-                <p className="text-xs text-slate-500 mt-1 leading-5">
-                  A successful submission marks your team's final completion time.
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </section>
-
-        {/* Completion Notice */}
-        <div className="mt-5 flex gap-3 p-4 bg-cyan-50 border border-cyan-200 rounded-lg">
-
-          <CheckCircle2 className="w-4 h-4 text-cyan-600 shrink-0 mt-0.5" />
-
-          <p className="text-xs text-cyan-800 leading-relaxed">
-
-            <span className="font-semibold">
-              Final Checkpoint:
-            </span>{' '}
-            Once the final flag is verified, your completion timestamp will
-            be recorded for leaderboard ranking.
-
-          </p>
-
-        </div>
-
-      </main>
-
-      {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white mt-10">
-
-        <div className="max-w-6xl mx-auto px-5 py-5 flex justify-between text-[10px] font-mono text-slate-400">
-
-          <span>
-            CYBER HUNT 2026
-          </span>
-
-          <span>
-            NEXUS / FINAL LEVEL
-          </span>
-
-        </div>
-
-      </footer>
-
-    </div>
+    </main>
   );
 }

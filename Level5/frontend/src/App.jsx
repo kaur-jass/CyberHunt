@@ -1,44 +1,114 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate
+} from 'react-router-dom';
+
 import NexusHome from './pages/NexusHome';
-import RouteAPage from './pages/RouteAPage';
-import RouteBPage from './pages/RouteBPage';
-import RouteCPage from './pages/RouteCPage';
-import RouteDPage from './pages/RouteDPage';
-import RouteEPage from './pages/RouteEPage';
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-[#F7F8FA] text-[#111827] flex flex-col justify-between">
-        <header className="border-b border-[#E5E7EB] bg-white py-4 px-6 flex justify-between items-center shadow-xs">
-          <div className="flex items-center space-x-3">
-            <div className="h-3 w-3 rounded-full bg-emerald-600 animate-pulse"></div>
-            <span className="font-mono text-xs font-semibold tracking-wider uppercase text-[#6B7280]">
-              SYSTEM STATUS: ONLINE
-            </span>
+
+      <div className="min-h-screen bg-[#F7F8FA] text-[#111827] flex flex-col">
+
+        {/* Header */}
+        <header className="border-b border-[#E5E7EB] bg-white">
+
+          <div className="max-w-6xl mx-auto w-full px-6 py-4 flex items-center justify-between">
+
+            {/* Brand */}
+            <div className="flex items-center gap-3">
+
+              <div className="w-3 h-3 rounded-full bg-cyan-500 animate-pulse" />
+
+              <div>
+
+                <div className="font-semibold text-sm tracking-tight text-[#111827]">
+                  CYBER HUNT 2026
+                </div>
+
+                <div className="text-[9px] font-mono tracking-wider text-[#9CA3AF] mt-0.5">
+                  SECURE CTF EVENT PLATFORM
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* Status */}
+            <div className="flex items-center gap-2">
+
+              <span className="hidden sm:block text-[10px] font-mono text-[#9CA3AF]">
+                SYSTEM STATUS:
+              </span>
+
+              <span className="text-[10px] font-mono font-semibold text-cyan-700">
+                ONLINE
+              </span>
+
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
+
+            </div>
+
           </div>
-          <div className="text-sm font-semibold tracking-tight text-[#111827]">
-            CYBER HUNT 2026 / <span className="text-emerald-700">LEVEL 0: IGNITION</span>
-          </div>
+
         </header>
 
-        <main className="flex-grow flex items-center justify-center p-4">
+
+        {/* Main */}
+        <main className="flex-grow">
+
           <Routes>
-            <Route path="/" element={<NexusHome />} />
-            <Route path="/route-a" element={<RouteAPage />} />
-            <Route path="/route-b" element={<RouteBPage />} />
-            <Route path="/route-c" element={<RouteCPage />} />
-            <Route path="/route-d" element={<RouteDPage />} />
-            <Route path="/route-e" element={<RouteEPage />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
+
+            {/* Final Nexus Destination */}
+            <Route
+              path="/"
+              element={<NexusHome />}
+            />
+
+            {/* Fallback */}
+            <Route
+              path="*"
+              element={
+                <Navigate
+                  to="/"
+                  replace
+                />
+              }
+            />
+
           </Routes>
+
         </main>
 
-        <footer className="border-t border-[#E5E7EB] bg-white py-3 px-6 text-center text-xs text-[#6B7280]">
-          Secure CTF Event Platform &bull; Authorized Access Only
+
+        {/* Footer */}
+        <footer className="border-t border-[#E5E7EB] bg-white">
+
+          <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+
+            <div className="text-[9px] font-mono text-[#9CA3AF]">
+              NEXUS NODE / NEX-01
+            </div>
+
+            <div className="text-[9px] font-mono text-[#9CA3AF]">
+              FINAL DESTINATION
+            </div>
+
+            <div className="text-[9px] font-mono text-[#9CA3AF]">
+              AUTHORIZED ACCESS ONLY
+            </div>
+
+          </div>
+
         </footer>
+
       </div>
+
     </Router>
   );
 }

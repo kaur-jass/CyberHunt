@@ -1,65 +1,123 @@
 const mongoose = require('mongoose');
 
-const progressSchema = new mongoose.Schema(
-  {
-    level: Number,
+const progressSchema =
+  new mongoose.Schema(
+    {
+      level: {
+        type: Number,
+        required: true
+      },
 
-    levelName: String,
+      levelName: {
+        type: String,
+        required: true
+      },
 
-    route: String,
+      route: {
+        type: String,
+        default: null
+      },
 
-    nodeId: String,
+      nodeId: {
+        type: String,
+        default: null
+      },
 
-    completedAt: Date,
+      completedAt: {
+        type: Date,
+        default: null
+      },
 
-    attempts: Number,
+      attempts: {
+        type: Number,
+        default: 0
+      },
 
-    timeTaken: Number,
+      wrongAttempts: {
+        type: Number,
+        default: 0
+      },
 
-    attemptPenalty: Number,
+      attemptsLeft: {
+        type: Number,
+        default: 5
+      },
 
-    timePenalty: Number,
+      timeTaken: {
+        type: Number,
+        default: 0
+      },
 
-    marks: Number
-  },
-  { _id: false }
-);
+      attemptPenalty: {
+        type: Number,
+        default: 0
+      },
 
-const leaderboardSchema = new mongoose.Schema({
-  teamId: {
-    type: String,
-    required: true,
-    unique: true
-  },
+      timePenalty: {
+        type: Number,
+        default: 0
+      },
 
-  teamName: String,
+      marks: {
+        type: Number,
+        default: 0
+      }
+    },
+    {
+      _id: false
+    }
+  );
 
-  leaderName: String,
 
-  totalMarks: {
-    type: Number,
-    default: 0
-  },
+const leaderboardSchema =
+  new mongoose.Schema({
+    teamId: {
+      type: String,
+      required: true,
+      unique: true,
+      index: true
+    },
 
-  completedLevels: {
-    type: Number,
-    default: 0
-  },
+    teamName: {
+      type: String,
+      default: ''
+    },
 
-  totalTime: {
-    type: Number,
-    default: 0
-  },
+    leaderName: {
+      type: String,
+      default: ''
+    },
 
-  progress: [progressSchema],
+    totalMarks: {
+      type: Number,
+      default: 0
+    },
 
-  updatedAt: {
-    type: Date,
-    default: Date.now
-  }
-});
+    completedLevels: {
+      type: Number,
+      default: 0
+    },
 
-module.exports = mongoose.model(
-  'Leaderboard',
-  leaderboardSchema
-);
+    totalTime: {
+      type: Number,
+      default: 0
+    },
+
+    progress: {
+      type: [progressSchema],
+      default: []
+    },
+
+    updatedAt: {
+      type: Date,
+      default: Date.now
+    }
+  });
+
+
+module.exports =
+  mongoose.models.Leaderboard ||
+  mongoose.model(
+    'Leaderboard',
+    leaderboardSchema
+  );

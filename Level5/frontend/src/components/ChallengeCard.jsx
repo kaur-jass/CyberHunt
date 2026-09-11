@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 
 export default function ChallengeCard({
-  routeCode,
+  routeCode = 'A',
   nodeId = 'NEX-01',
   challengeTitle,
   category,
@@ -28,6 +28,8 @@ export default function ChallengeCard({
 
   const currentNode = nodeId || 'NEX-01';
 
+  const currentRouteCode = 'A';
+
   const handleSubmitFlag = async (e) => {
     e.preventDefault();
 
@@ -35,7 +37,7 @@ export default function ChallengeCard({
     setFeedback(null);
 
     const API_URL =
-      import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      import.meta.env.VITE_API_URL || 'http://localhost:5005';
 
     try {
       const response = await fetch(`${API_URL}/api/submit`, {
@@ -48,7 +50,7 @@ export default function ChallengeCard({
         body: JSON.stringify({
           teamId: teamId.trim(),
           flag: flag.trim(),
-          routeCode: routeCode?.toUpperCase(),
+          routeCode: currentRouteCode,
           nodeId: currentNode
         })
       });
@@ -475,7 +477,19 @@ export default function ChallengeCard({
                     </span>
 
                     <span className="text-slate-600">
-                      NEX-01
+                      {currentNode}
+                    </span>
+
+                  </div>
+
+                  <div className="flex justify-between text-[10px] font-mono text-slate-400">
+
+                    <span>
+                      ROUTE
+                    </span>
+
+                    <span className="text-slate-600">
+                      A
                     </span>
 
                   </div>
