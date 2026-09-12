@@ -1,4 +1,4 @@
-const LevelConfig = require('../models/LevelConfig');
+const LevelConfig = require('../models/levelConfig');
 
 const setLevelTime = async (req, res) => {
   try {
