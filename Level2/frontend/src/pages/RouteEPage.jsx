@@ -23,8 +23,7 @@ The SOC analyst says:
 Decode it.
 
 Flag: CYBER{________}
-
-ASCII decoding gives: PHANTOM`}
+`}
       hint="Interpret every 8-bit binary group as one ASCII character."
       nextNode="BRH-E"
     />

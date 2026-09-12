@@ -5,7 +5,7 @@ export default function RouteAPage() {
   return (
     <ChallengeCard
       routeCode="A"
-      challengeTitle="Hidden in the Breach Report — SHADOW"
+      challengeTitle="Hidden in the Breach Report"
       category="Incident Investigation"
       difficulty="Easy"
       description={`NIT Jalandhar SOC — Data Breach Investigation

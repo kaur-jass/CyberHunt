@@ -5,21 +5,25 @@ export default function RouteDPage() {
   return (
     <ChallengeCard
       routeCode="D"
-      challengeTitle="Decode the Message"
-      category="Encoding"
+      challengeTitle="Hidden Hash Clue"
+      category="Password Cracking"
       difficulty="Medium"
-      description={`An attacker intercepted this message:
+      description={`Investigators recovered this MD5 hash from a compromised account:
 
-RkxBR3tERUNPREV9SEVSRX0xMjN9
+5f4dcc3b5aa765d61d8327deb882cf99
 
-The analyst says:
+The account password was weak enough to be found in a common password list.
 
-"It's not encrypted. It's just wearing a different representation."
+Recover the original password.
 
-Decode the message.
+Submit the recovered password as the flag.
 
-Flag format: CYBER{________}`}
-      hint="This is Base64. Decode the message to reveal the flag."
+Flag format: CYBER{________}
+
+The hash resolves to:
+
+password`}
+      hint="Identify the hash type and recover the original password from a common password list."
       nextNode="TRC-D"
     />
   );

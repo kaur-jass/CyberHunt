@@ -1,29 +1,26 @@
 import React from 'react';
 import ChallengeCard from '../components/ChallengeCard';
 
-export default function RouteEPage() {
+export default function RouteBPage() {
   return (
     <ChallengeCard
       routeCode="E"
-      challengeTitle="Metadata Investigation"
-      category="Digital Forensics"
-      difficulty="Easy"
-      description={`Give them an image containing a normal-looking picture.
+      challengeTitle="Password Breach"
+      category="Cybersecurity Basics"
+      difficulty="Medium"
+      description={`A vulnerability discovered in the student portal has been reported to the security team.
 
-The QR says:
+The report contains:
 
-"The picture tells you what you see.
-The metadata tells you what happened.
-Find the hidden clue."
+Vendor: Internal Portal
+Vulnerability: Authentication bypass
+Severity: Critical
+Reference: CVE-2026-XXXX
 
-Investigate the image's metadata.
+What four-letter abbreviation is used to identify publicly documented cybersecurity vulnerabilities?
 
-Flag format: CYBER{________}
-
-Set the image's metadata so that, for example:
-
-Comment: FLAG{METADATA_NEVER_LIES}`}
-      hint="Inspect the image's metadata, especially the Comment field."
+Flag format: CYBER{____}`}
+      hint="Look at the reference format in the security report. The four-letter abbreviation is used for publicly documented vulnerabilities."
       nextNode="TRC-E"
     />
   );
